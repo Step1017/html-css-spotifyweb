@@ -150,10 +150,12 @@ aside h3 {
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+    z-index: 100;
 }
 
-#main-page .my-row .my-col .img-cont i:hover {
+#main-page .my-row .my-col .img-cont .fa-4x:hover {
     display: block;
+    opacity: 1;
 
 }
 
@@ -238,6 +240,7 @@ aside h3 {
 
 .small-logo {
     display: none;
+    width: 2.5rem;
 }
 
 aside > div {
@@ -350,11 +353,15 @@ footer .player {
     justify-content: space-between;
     align-items: center;
     background-color: var(--grey-color);
+    width: 100%;
 }
 
 .playing , .controls{
-    display: flex;
     align-items: center;
+}
+
+.playing {
+    width: 20%;
 }
 
 .playing img {
@@ -387,6 +394,7 @@ footer .player {
 
 .controls {
     flex-direction: column;
+    min-width: 60%;
 }
 
 .controls .icons-middle {
@@ -408,6 +416,7 @@ footer .player {
 .bottom-bar {
     justify-content: space-between;
     align-items: center;
+    width: 60%;
 }
 
 .bottom-bar p {
@@ -417,7 +426,7 @@ footer .player {
 
 .progress-bar-light {
     height: 3px;
-    width: 500px;
+    width: 100%;
     background-color: var(--secondary-color-light);
 }
 
@@ -429,7 +438,8 @@ footer .player {
 
 .audio {
     align-items: center;
-    flex-wrap: wrap;
+    min-width: 20%;
+    justify-content: flex-end;
 }
 
 .audio .icons-end a {
@@ -441,7 +451,7 @@ footer .player {
 
 .audio-bar-light {
     height: 3px;
-    width: 100px;
+    width: 40%;
     background-color: var(--secondary-color-light);
     margin-right: 1rem;
 }
@@ -468,7 +478,7 @@ footer .player {
 
 @media screen and (max-width: 600px) {
     aside {
-        width: 3rem;
+        width: 5rem;
     }
 
     main #main-page {
@@ -477,11 +487,11 @@ footer .player {
 
     main aside .aside-cont .small-logo {
         display: block;
-        padding: 0.2rem 0.4rem;
+    
     }
 
     main aside .aside-cont .logo {
-        padding: 4px 8px;
+        padding: 8px 0;
     }
 
     main aside .aside-cont .large-logo {
@@ -500,7 +510,16 @@ footer .player {
         display: none;
     }
 
+    .playing {
+        min-width: 10%;
+    }
 
+
+    .audio {
+        min-width: 10%;
+        flex-direction: column;
+        justify-content: center;
+    }
 
 
 }
