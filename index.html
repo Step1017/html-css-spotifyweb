@@ -18,19 +18,30 @@
     </head>
     <body>
         <main class="d-flex">
-            <aside>
-                <div class="aside-cont">
-                    <img class="logo" src="img/logo.svg" alt="Logo Spotify">
+            <aside class="d-flex">
+                <div class="aside-cont d-flex">
+                    <div class="logo">
+                        <img class="large-logo" src="img/logo.svg" alt="Logo Spotify">
+                        <img class="small-logo" src="img/logo-small.svg" alt="Logo-small">
+                    </div>
                     <ul>
                         <li>
-                            <i class="fa-solid fa-house"></i>
-                            <a class="home" href="#">Home</a>
+                            <a class="home" href="#">
+                                <img src="img/home.svg" alt="Home">
+                                <span>Home</span>
+                            </a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa-solid fa-magnifying-glass"></i> Cerca</a>                           
+                            <a href="#">
+                                <img src="img/search.svg" alt="Search"> 
+                                <span>Cerca</span> 
+                            </a>                           
                         </li>
                         <li>
-                            <a href="#"><i class="fa-flip-horizontal fa-solid fa-lines-leaning"></i> La tua libreria</a>                
+                            <a href="#">
+                                <img src="img/libreria.svg" alt="Libreria"> 
+                                <span>La tua libreria</span> 
+                            </a> 
                         </li>
                     </ul>
                 </div>
@@ -55,18 +66,19 @@
                             <li><a href="#">Nome Playlist</a></li>
                         </ul>
                     </div>
-                    <div class="aside-bottom">
-                        <p>
-                            <i class="fa-regular fa-circle-down"></i>
-                            Installa app
-                        </p>
-                        <hr>
-                        <h4>
-                            <i class="fa-regular fa-circle-user"></i>
-                            John Doe
-                        </h4>
-                    </div>
                 </div>
+
+                <div class="aside-bottom">
+                    <p>
+                        <i class="fa-regular fa-circle-down"></i>
+                            Installa app
+                    </p>
+                    <hr>
+                    <h4>
+                        <i class="fa-regular fa-circle-user"></i>
+                            John Doe
+                    </h4>
+                </div>                
             </aside>
                         
             <div id="main-page" class="scroll">
@@ -92,7 +104,10 @@
 
                     <div class="my-row d-flex">
                         <div class="my-col">
-                            <img src="img/metal_lifting.jpg" alt="Heavy Metal">
+                            <div class="img-cont">
+                                <img src="img/metal_lifting.jpg" alt="Heavy Metal">
+                                <i class="fa-regular fa-circle-play fa-4x"></i>
+                            </div>
                             <h3>Heavy Metal</h3>
                             <p>Subtitle</p>
                         </div>
@@ -165,7 +180,7 @@
         </main>
         <footer>
             <div class="player d-flex">
-                <div class="playing">
+                <div class="playing d-flex">
                     <img src="img/sinister.jpeg" alt="Sinister">
                     <div>
                         <h4>
@@ -184,7 +199,7 @@
                     <div class="icons-middle">
                         <a href="#"><i class="fa-solid fa-shuffle"></i></a>
                         <a href="#"><i class="fa-solid fa-backward-step"></i></a>
-                        <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                        <a href="#"><i class="fa-regular fa-circle-play button"></i></a>
                         <a href="#"><i class="fa-solid fa-forward-step"></i></a>
                         <a href="#"><i class="fa-solid fa-rotate-right"></i></a>
                     </div>
@@ -206,8 +221,7 @@
                     <div class="audio-bar-light">   
                         <div class="audio-bar-dark">                              
                         </div>                        
-                    </div>
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </footer>       

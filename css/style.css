@@ -44,7 +44,7 @@ ul li a {
 }
 
 .scroll {
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .my-row {
@@ -54,8 +54,6 @@ ul li a {
 
 .my-row .my-col{
     width: calc((100% / 6) - 0.5rem);
-    /* background-color: coral;
-    height: 170px; */
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     text-align: center;
@@ -69,6 +67,7 @@ ul li a {
 /* MAIN */
 main {
     height: calc(100vh - 100px);
+    overflow: hidden;
 }
 
 main > * {
@@ -76,7 +75,10 @@ main > * {
 }
 
 aside {
+    justify-content: space-between;
+    flex-direction: column; 
     width: 15rem;
+    min-height: 25rem;
     z-index: 30;
     background-color: var(--primary-color);
     color: var(--secondary-color-light);
@@ -92,7 +94,6 @@ aside ul li a:hover {
 
 
 .home,
-.fa-house,
 aside h3 {
     color: var(--secondary-color);
 }
@@ -128,6 +129,37 @@ aside h3 {
     color: var(--secondary-color-light);
     font-weight: bold;
 }
+
+#main-page nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+#main-page .my-row .my-col .img-cont{
+    position: relative;
+}
+
+#main-page .my-row .my-col .img-cont:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#main-page .my-row .my-col .img-cont i{
+    color: var(--secondary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#main-page .my-row .my-col .img-cont i:hover {
+    display: block;
+
+}
+
+
+
+
 
 #recently, #for-you, #popular-artists {
     padding: 0 1rem;
@@ -198,10 +230,14 @@ aside h3 {
     border-radius: 50%;
 }
 
-.logo {
+.large-logo {
     width: 70%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.small-logo {
+    display: none;
 }
 
 aside > div {
@@ -210,14 +246,19 @@ aside > div {
 
 .aside-cont {
     margin: 0 1.5rem;
+    flex-direction: column;
 }
 
 .aside-cont ul li {
     padding-top: 0.5rem;
 }
 
-.aside-cont ul li > * {
+.aside-cont ul li a > * {
     vertical-align: middle;
+}
+
+.aside-cont ul li img {
+    width: 2rem;
 }
 
 .playlist-cont {
@@ -300,7 +341,8 @@ aside > div {
 
 /* FOOTER */
 footer {
-
+    position: relative;
+    z-index: 40;
 }
 
 footer .player {
@@ -359,12 +401,12 @@ footer .player {
     padding: 2rem 0;
 }
 
-.fa-circle-play {
+.fa-circle-play .button{
     padding: 0 1.7rem;
 }
 
 .bottom-bar {
-    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -386,8 +428,8 @@ footer .player {
 }
 
 .audio {
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .audio .icons-end a {
@@ -412,7 +454,53 @@ footer .player {
 
 
 /* MEDIA QUERY */
-@media screen and (max-width:700px) {
-    .my-ro
-    width: calc((100% / 4) - 10px);
+@media screen and (max-width: 1100px) {
+    .my-row .my-col{
+        width: calc((100% / 4) - 0.5rem);
+    }  
+}
+
+@media screen and (max-width: 700px) {
+    .my-row .my-col{
+        width: calc((100% / 2) - 0.5rem);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    aside {
+        width: 3rem;
+    }
+
+    main #main-page {
+        width: calc(100% - 3rem);
+    }
+
+    main aside .aside-cont .small-logo {
+        display: block;
+        padding: 0.2rem 0.4rem;
+    }
+
+    main aside .aside-cont .logo {
+        padding: 4px 8px;
+    }
+
+    main aside .aside-cont .large-logo {
+        display: none;
+    }
+
+    main aside .aside-cont a span {
+        display: none;
+    }
+
+    main aside .playlist-cont {
+        display: none;
+    }
+
+    main aside .aside-bottom {
+        display: none;
+    }
+
+
+
+
 }
