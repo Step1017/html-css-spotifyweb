@@ -138,30 +138,23 @@ aside h3 {
     position: relative;
 }
 
-#main-page .my-row .my-col .img-cont:hover {
-    opacity: 0.5;
+#main-page .my-row .my-col .img-cont .overlay i{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     cursor: pointer;
 }
 
-#main-page .my-row .my-col .img-cont i{
-    color: var(--secondary-color);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    z-index: 100;
+#main-page .my-row .my-col .img-cont:hover .overlay i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-#main-page .my-row .my-col .img-cont .fa-4x:hover {
-    display: block;
-    opacity: 1;
-
-}
-
-
-
-
 
 #recently, #for-you, #popular-artists {
     padding: 0 1rem;
@@ -312,8 +305,12 @@ aside > div {
     cursor: pointer;
 }
 
-.aside-bottom i {
+.aside-bottom img {
     vertical-align: middle;
+    width: 25px;
+    background-color: var(--secondary-color-light);
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 .aside-bottom hr {
