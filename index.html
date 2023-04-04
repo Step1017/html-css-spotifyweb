@@ -84,17 +84,19 @@
             <div id="main-page" class="scroll">
                 
                 <div id="upper-bar">
-                    <a class="btn" href="#">EFFETTUA L'UPGRADE</a>
+                    <button class="btn">
+                        <a href="#" target="_blank">EFFETTUA L'UPGRADE</a>
+                    </button>
                 </div>
-
                 <nav>
                     <ul>
-                        <li><a href="#">IN EVIDENZA</a></li>
-                        <li><a href="#">PODCAST</a></li>
-                        <li><a href="#">CLASSIFICHE</a></li>
-                        <li><a href="#">GENERI E MOOD</a></li>
-                        <li><a href="#">NUOVE USCITE</a></li>
-                        <li><a href="#">SCOPRI</a></li>
+                        <li><a href="#">IN EVIDENZA</a><hr class="active"></li>
+                        <li><a href="#">PODCAST</a><hr></li>
+                        <li><a href="#">CLASSIFICHE</a><hr></li>
+                        <li><a href="#">GENERI E MOOD</a><hr></li>
+                        <li><a href="#">NUOVE USCITE</a><hr></li>
+                        <li><a href="#">SCOPRI</a><hr></li>
+
                     </ul>
                 </nav>
                 <div id="recently">
@@ -199,7 +201,7 @@
                         Artisti più popolari
                     </h2>
                     <p>
-                        Ascolta gli artisti con più straming.
+                        Ascolta gli artisti con più streaming.
                     </p>
 
                     <div class="my-row d-flex">
@@ -228,14 +230,16 @@
         <footer>
             <div class="player d-flex">
                 <div class="playing d-flex">
-                    <img src="img/sinister.jpeg" alt="Sinister">
-                    <div>
-                        <h4>
-                            Sinister
-                        </h4>
-                        <p>
-                            Nome Brano
-                        </p>
+                    <div class="playing-container d-flex">
+                        <img src="img/sinister.jpeg" alt="Sinister">
+                        <div>
+                            <h4>
+                                Sinister
+                            </h4>
+                            <p>
+                                Nome Brano
+                            </p>
+                        </div>
                     </div>
                     <div class="icons">
                         <a href="#"><i class="fa-regular fa-heart"></i></a>
@@ -245,19 +249,17 @@
                 <div class="controls d-flex">
                     <div class="icons-middle">
                         <div class="button-list d-flex">
-                            <a href="#"><i class="fa-solid fa-shuffle"></i></a>
-                            <a href="#"><i class="fa-solid fa-backward-step"></i></a>
-                            <a href="#"><i class="fa-regular fa-circle-play button"></i></a>
-                            <a href="#"><i class="fa-solid fa-forward-step"></i></a>
-                            <a href="#"><i class="fa-solid fa-rotate-right"></i></a>
+                            <i class="fa-solid fa-shuffle"></i>
+                            <i class="fa-solid fa-backward-step"></i>
+                            <i class="fa-regular fa-circle-play button"></i>
+                            <i class="fa-solid fa-forward-step"></i>
+                            <i class="fa-solid fa-rotate-right"></i>
                         </div>
                     </div>
                     <div class="bottom-bar d-flex">
                         <p>0.25</p>
                         <div class="progress-bar-light">   
-                            <div class="progress-bar-dark"> 
-                                <img src="img" alt="">                             
-                            </div>                        
+                            <div class="progress-bar-dark"></div>                        
                         </div>
                         <p>4.35 </p>
                     </div>

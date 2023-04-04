@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
 }
- 
+
 /* GENERALI */
 :root {
     --primary-color: #000;
@@ -22,6 +22,7 @@ body {
 .d-flex {
     display: flex;
 }
+
 
 .btn {
     border: 1px solid var(--secondary-color);
@@ -93,13 +94,10 @@ aside ul li a:hover {
     color: var(--secondary-color);
 }
 
-
 .home,
 aside h3 {
     color: var(--secondary-color);
 }
-
-
 
 #main-page {
     width: calc(100% - 15rem);
@@ -113,8 +111,24 @@ aside h3 {
     text-align: right;
     padding: 2rem;
     background-color: #080b1276;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
+#upper-bar button {
+    background-color: #080b1276;
+}
+
+#upper-bar button a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+#upper-bar .btn:hover {
+    transform:scale(1.2);
+}
 
 #main-page nav {
     text-align: center;
@@ -123,7 +137,7 @@ aside h3 {
 
 #main-page nav ul li {
     display: inline-block;
-    margin: 0 0.6rem;
+    padding: 1.2rem;
 }
 
 #main-page nav ul li a{
@@ -133,6 +147,16 @@ aside h3 {
 
 #main-page nav ul li a:hover {
     color: var(--secondary-color);
+}
+
+#main-page nav ul hr{
+    width: 30px;
+    border-color: transparent;
+    margin: 0.2rem auto;
+}
+
+#main-page nav ul hr.active{
+    border-color: #adff2f;
 }
 
 #main-page .my-row .my-col .img-cont{
@@ -331,15 +355,6 @@ aside > div {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* FOOTER */
 footer {
     position: relative;
@@ -383,6 +398,10 @@ footer .player {
     margin-left: 2rem;
 }
 
+.playing .icons a i:hover{
+    color: var(--secondary-color);
+}
+
 .playing a{
     text-decoration: none;
     color: var(--secondary-color-light);
@@ -405,7 +424,7 @@ footer .player {
     height: 100%;
 }
 
-.controls .icons-middle a {
+.controls .icons-middle .button-list i {
     text-decoration: none;
     color: var(--secondary-color);
     margin-right: 1.2rem;
@@ -413,8 +432,9 @@ footer .player {
     padding: 2rem 0;
 }
 
-.fa-circle-play .button{
-    padding: 0 1.7rem;
+.controls .icons-middle .button-list i:nth-child(3):hover {
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .bottom-bar {
@@ -432,12 +452,38 @@ footer .player {
     height: 3px;
     width: 80%;
     background-color: var(--secondary-color-light);
+    border-radius: 10px;
+    position: relative;
 }
 
 .progress-bar-dark {
     height: 3px;
     width: 25%;
     background-color: var(--secondary-color);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-bar-dark::after, .audio-bar-dark::after {
+    content: "";
+    height: 0.9rem;
+    width: 0.9rem;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    left: calc(100% - 0.45rem);
+    top: calc(50% - 0.45rem);
+    display: none;
+}
+.progress-bar-light:hover .progress-bar-dark {
+    background-color: #adff2f;
+    cursor: pointer;
+}
+
+.progress-bar-light:hover .progress-bar-dark::after{
+    display: block;
 }
 
 .audio {
@@ -456,15 +502,30 @@ footer .player {
 
 .audio-bar-light {
     height: 3px;
-    width: 70%;
+    width: 75%;
     background-color: var(--secondary-color-light);
     margin-right: 1rem;
+    border-radius: 10px;
+    position: relative;
 }
 
 .audio-bar-dark {
     height: 3px;
     width: 25%;
     background-color: var(--secondary-color);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.audio-bar-light:hover .audio-bar-dark {
+    background-color: #adff2f;
+    cursor: pointer;
+}
+
+.audio-bar-light:hover .audio-bar-dark::after{
+    display: block;
 }
 
 
@@ -483,7 +544,8 @@ footer .player {
 
 @media screen and (max-width: 600px) {
     aside {
-        width: 5rem;
+        width: 3rem;
+        align-items: center;
     }
 
     main #main-page {
@@ -492,7 +554,7 @@ footer .player {
 
     main aside .aside-cont .small-logo {
         display: block;
-    
+        width: 2rem;
     }
 
     main aside .aside-cont .logo {
@@ -515,5 +577,8 @@ footer .player {
         display: none;
     }
 
+    footer .playing-container img {
+        width: 30%;
+    }
 
 }
